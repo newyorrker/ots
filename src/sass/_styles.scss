@@ -54,7 +54,23 @@ html {
 		}
 	}
 
-
+// ---- main-form ----
+	.main-form {
+		//
+		&__group {
+			@extend .form-group;
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
 
 
 

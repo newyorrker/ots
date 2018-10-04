@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <link rel="stylesheet" href="{{up}}css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      {# HEADER #}
+        {% include "layouts/_header.html" %}
+      {# HEADER #}
+
+      <!-- BEGIN content -->
+      <main class="main">
+        {% block content %}
+
+        {% endblock %}
+      </main>
+
+      <!-- END content -->
+
+      {# FOOTER #}
+        {% include "layouts/_footer.html" %}
+      {# FOOTER #}
+    </div>
+    <!-- BEGIN scripts -->
+      {% include "partials/_scripts.html" %}
+    <!-- END scripts -->
+  </body>
+</html>

@@ -1,0 +1,67 @@
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	line-height: 1.5;
+	font-size: 16px;
+
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+@import "blocks/containers";
+@import "blocks/page";
+@import "blocks/main";
+
+
+
+
+
+
+
+// ---- header ----
+	.header {
+
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			&__burger {
+				display: none;
+				visibility: hidden;
+			}
+			&__logo {
+				position: static;
+			}
+		}
+	}
+
+// ---- footer ----
+	.footer {
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
+
+
+
+
+
+
+.white-popup {
+	background-color: white;
+  width: 450px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}

@@ -13,79 +13,74 @@
 				<div class="app__wrap">
 					<form class="main-form app__form">
 						<!-- item-name -->
-						<div class="item-name main-form__name">
-							<div class="main-form__group">
-								<label class="main-form__group-header" for="main-form-name">Наименование</label>
-								<textarea type="email" class="form-control" id="main-form-name"></textarea>
+						<div class="item-name main-form__name row">
+							<label class="main-form__group-header col-xs-12 col-sm-4" for="main-form-name">Наименование:</label>
+							<div class="main-form__group col-xs-12 col-sm-8">
+								<textarea id="main-form-name"></textarea>
 							</div>
 						</div>
 						<!-- form-price-type -->
-						<div class="form-price-type main-form__price-type main-form__group">
-							<span class="main-form__group-header">Тип ценового предложения</span>
-							<input class="main-form__check" type="radio" name="check-price-type" id="for-lot" value="for-lot" checked>
-							<label class="main-form__check-label" for="radio-for-lot">
-						    За лот
-						  </label>
-						  <input class="main-form__check" type="radio" name="check-price-type" id="for-unit" value="for-unit">
-						  <label class="main-form__check-label" for="radio-for-unit">
-						    За единице продукции
-						  </label>
-						  checkbox
+						<div class="price-type main-form__price-type row">
+							<span class="main-form__group-header col-xs-12 col-sm-4">Тип ценового предложения:</span>
+							<div class="col-xs-12 col-sm-8">
+								<div class="price-type__inline main-form__row">
+									<div class="main-form__group">
+										<input class="main-form__check" type="radio" name="check-price-type" id="for-lot" value="for-lot" checked>
+										<label class="main-form__check-label" for="for-lot">
+											За лот
+										</label>
+									</div>
+									<div class="main-form__group">
+										<input class="main-form__check" type="radio" name="check-price-type" id="for-unit" value="for-unit">
+										<label class="main-form__check-label" for="for-unit">
+											За единицу продукции
+										</label>
+									</div>
+								</div>
+								<div class="main-form__group">
+									<input type="checkbox" value="" id="price-not-mounted">
+									<label class="form-check-label" for="price-not-mounted">
+										Максимальная цена не установлена
+									</label>
+								</div>
+							</div>
 						</div>
 						<!-- form-price -->
-						<div class="form-price main-form__price">
-							<div class="form-price__nominal main-form__input-group">
-								<input type="text" name="">
-								<select>select</select>
-								check
-							</div>
-							<div class="form-price__nds main-form__input-group">
-								<label>ставка ндс</label>
-								<select>
-									<option>select</option>
-									<option>select1</option>
-									<option>select2</option>
-								</select>
-								<label>Сумма ндс</label>
-								<input type="text" name="">
-								<label>Цены без ндс</label>
-								<input type="text" name="">
-							</div>
-
-							<label for="main-form-name">Наименование</label>
-							<input type="email" class="form-control" id="main-form-name">
-						</div>
-						<!-- OKV-OKP -->
-						<div class="OKV-OKP main-form__OKV-OKP">
-							<div class="OKV-OKP__col-item">
-								<h5>№</h5>
-								<div class="main-form__group">
-									<span>1</span>
+						<div class="form-price main-form__price row">
+							<label for="price-value" class="main-form__group-header col-xs-12 col-sm-4">Начальная/Максимальная цена с НДС*:</label>
+							<div class="col-xs-12 col-sm-8">
+								<div class="main-form__row">
+									<div class="main-form__group">
+										<input type="text" id="price-value" name="price">
+									</div>
+									<div class="main-form__group">
+										<select id="currency">
+											<option>руб.</option>
+											<option>дол.</option>
+											<option>евр.</option>
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="OKV-OKP__col-item">
-								<h5>Количество</h5>
-								<div class="main-form__group">
-									<input type="text">
-									<input type="text">
-								</div>
-							</div>
-							<div class="OKV-OKP__col-item">
-								<h5>ОКВЕД2/ОКПД2</h5>
-								<div class="main-form__group">
-									<select name="" id=""></select>
-									<select name="" id=""></select>
-								</div>
-							</div>
-							<div class="OKV-OKP__col-item">
-								<h5>Доп. сведения</h5>
-								<div class="main-form__group">
-									<textarea>
-									</textarea>
+								<div class="main-form__row">
+									<div class="form-price__nds main-form__group">
+										<label for="nds-rate">ставка ндс</label>
+										<select id="nds-rate">
+											<option>18%</option>
+											<option>19%</option>
+											<option>20%</option>
+										</select>
+									</div>
+									<div class="main-form__group">
+										<label for="nds-sum">Сумма ндс</label>
+										<input id="nds-sum" type="text" name="nds-sum">
+									</div>
+									<div class="main-form__group">
+										<label>Цены без ндс</label>
+										<input id="no-nds-price" type="text" name="no-nds-price">
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</form>
 					<div class="main-table">
 						<table>

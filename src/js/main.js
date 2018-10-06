@@ -3,12 +3,13 @@ require('./libs.js');
 
 import $ from 'jquery';
 import select2 from 'select2';
-
+import jQueryScrollbar from 'jquery.scrollbar'
 
 
 jQuery(document).ready(function($) {
 
 
+$('.scrollbar-light').scrollbar();
 class Codes {
 	constructor() {
     const selectData = [
@@ -35,6 +36,8 @@ class Codes {
 					data: data,
 					placeholder: "Выберетие код"
 				})
+    			// allowClear: true
+				}) // сделать обработку ошибки
 			});
   	});
   }

@@ -1,18 +1,14 @@
 require('./libs.js');
-require('./callback.js');
+// require('./callback.js');
 
 import $ from 'jquery';
 import select2 from 'select2';
 
 
-jQuery(document).ready(function($) {
-
 
 jQuery(document).ready(function($) {
 
-});
 
-document.addEventListener("DOMContentLoaded", function(event) {
 class Codes {
 	constructor() {
     const selectData = [

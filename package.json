@@ -13,6 +13,7 @@
     "flexboxgrid-delta": "0.0.1",
     "inputmask": "^4.0.0",
     "jquery": "^3.3.1",
+    "jquery.scrollbar": "^0.2.11",
     "magnific-popup": "^1.1.0",
     "select2": "^4.0.6-rc.1",
     "vanilla-lazyload": "^8.15.2"

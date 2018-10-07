@@ -13,6 +13,7 @@
     "flexboxgrid-delta": "0.0.1",
     "jquery": "^3.3.1",
     "jquery.scrollbar": "^0.2.11",
+    "select2": "^4.0.6-rc.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

@@ -123,6 +123,13 @@ class Codes {
 				$(element.selector).select2({
 					data: data,
 					placeholder: "Выберетие код"
+					placeholder: "Выберете код",
+				})
+			})
+			.catch(function (error) {
+				console.log('There has been a problem with your fetch operation: ' + error.message);
+				$(element.selector).select2({
+					placeholder: "Ошибка загрузки списка кодов",
 				})
     			// allowClear: true
 				}) // сделать обработку ошибки

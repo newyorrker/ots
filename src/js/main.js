@@ -5,6 +5,21 @@ import jQueryScrollbar from 'jquery.scrollbar'
 
 jQuery(document).ready(function($) {
 
+(function scrollbarInit () {
+	if (jQueryScrollbar && $('.scrollbar-light').length > 0) {
+		$('.scrollbar-light').scrollbar();
+	}
+
+	$('textarea.scrollbar-light').on('focus', function(e) {
+		$(this).closest('div.scrollbar-light').addClass('textarea-focused');
+	});
+	$('textarea.scrollbar-light').on('focusout', function(e) {
+		$(this).closest('div.scrollbar-light').removeClass('textarea-focused');
+	});
+
+})();
+
+
 class PriceTypeChange {
 	constructor() {
 
@@ -83,7 +98,6 @@ class PriceTypeChange {
 	}
 }
 
-$('.scrollbar-light').scrollbar();
 class Codes {
 	constructor() {
     const selectData = [

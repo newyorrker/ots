@@ -1,8 +1,6 @@
 /* LIBS */
 
 @import "../../node_modules/flexboxgrid-delta/src/flexboxgrid.scss";
-// @import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/magnific-popup/src/css/main";
 
 //--------------------------------------------------------------
 // Helper SASS
@@ -10,15 +8,25 @@
 @import 	"_helpers/all";
 @import  	"variables";
 
+
+
+
+//select2
+@import "../../node_modules/select2/src/scss/core";
+
+@import "../../node_modules/jquery.scrollbar/jquery.scrollbar";
+
+//bootstrap
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
 
 @import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/custom-forms";
 @import "../../node_modules/bootstrap/scss/buttons";
-// @import "../../node_modules/bootstrap/scss/list-group";
 @import "../../node_modules/bootstrap/scss/input-group";
+
 
 //--------------------------------------------------------------
 // CUSTOM STYLES

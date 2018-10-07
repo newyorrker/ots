@@ -13,10 +13,27 @@ html {
 @import "blocks/page";
 @import "blocks/main";
 
+label {
+	display: inline-block;
+}
 
+select,
+input[type="text"],
+input[type="number"],
+textarea {
+	@extend .form-control;
+}
+input[type="number"] {
+	padding-right: 0.1rem;
+}
 
-
-
+input[type="checkbox"],
+input[type="radio"] {
+	@extend .custom-control-input;
+	& + label {
+		@extend .custom-control-label;
+	}
+}
 
 
 // ---- header ----
@@ -56,10 +73,59 @@ html {
 
 // ---- main-form ----
 	.main-form {
-		//
-		&__group {
-			@extend .form-group;
+		&__section {
+			display: flex;
 		}
+		&__group,
+		&__custom {
+			width: auto;
+			@extend .form-group;
+			& > .select2 {
+				width: 100% !important;
+			}
+		}
+		&__custom {
+			@extend .custom-control;
+			min-height: auto;
+		}
+		&__custom--checkbox {
+			@extend .custom-checkbox;
+		}
+		&__custom--radio {
+			@extend .custom-radio;
+		}
+		&__inline {
+			& > div {
+				display: inline-block;
+			}
+		}
+		&__row {
+			& > * {
+				display: inline-block;
+				margin-right: 11px;
+			}
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include sm {
+			&__group-header {
+				text-align: right;
+			}
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
+
+
+
+// ---- price-type ----
+	.price-type {
 		//media stack
 		@include rmax(468) {
 			//
@@ -72,7 +138,111 @@ html {
 		}
 	}
 
+// ---- form-price ----
+	.form-price {
+		&__nominal {
+			& > * {
+				display: inline-block;
+				margin-right: 11px;
+			}
+		}
 
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
+
+// ---- main-table ----
+	.main-table {
+		overflow-x: scroll;
+		table {
+			width: 1170px;
+		}
+		td, th {
+			border: 1px #bbb solid;
+			padding: 8px 10px;
+		}
+		th {
+			text-align: left;
+		}
+		th:first-child {
+			width: 50px;
+		}
+		td:nth-child(3) {
+			width: 53%
+		}
+		textarea {
+			resize: none;
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			overflow-x: auto;
+			table {
+				width: 100%
+			}
+		}
+	}
+
+// ---- select2 ----
+	.select2-search {
+		&__field {
+			height: 28px;
+			@extend .form-control;
+		}
+	}
+
+	.select2-selection {
+		&__arrow {
+			height: 37px !important;
+			top: 0 !important;
+		}
+		&__rendered {
+			white-space: normal !important;
+		}
+	}
+	.select2-selection--single {
+		height: 38px !important;
+		border: 1px solid #ced4da !important;
+		overflow: hidden;
+		position: relative;
+		top: -2px;
+		@extend .form-control;
+	}
+
+	.select2-container--open {
+		width: auto !important;
+	}
+
+
+.OKV, .OKP {
+	opacity: 0;
+}
+
+.scrollbar-light {
+	height: 88px;
+	border: 1px #ced4da solid;
+	border-radius: 4px;
+}
+
+.textarea-focused {
+	border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
 
 .white-popup {
@@ -81,3 +251,8 @@ html {
   margin: 0 auto;
   padding: 40px 20px;
 }
+
+
+
+
+

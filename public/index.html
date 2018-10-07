@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>ots</title>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<div class="page">
+			<header class="header page__header">
+				<div class="container-fluid">
+				</div>
+			</header>
+			<!-- BEGIN content -->
+			<main class="main">
+				<div class="main__front-page container-fluid">
+					<div class="app">
+						<div class="app__wrap">
+							<form class="main-form app__form">
+								<!-- item-name -->
+								<div class="item-name main-form__name row">
+									<label class="main-form__group-header col-xs-12 col-sm-4" for="main-form-name">Наименование:</label>
+									<div class="main-form__group col-xs-12 col-sm-8">
+										<textarea id="main-form-name"></textarea>
+									</div>
+								</div>
+								<!-- form-price-type -->
+								<div class="price-type main-form__price-type row">
+									<span class="main-form__group-header col-xs-12 col-sm-4">Тип ценового предложения:</span>
+									<div class="col-xs-12 col-sm-8">
+										<div class="price-type__inline main-form__row">
+											<div class="main-form__custom main-form__custom--radio">
+												<input class="main-form__check" type="radio" name="check-price-type" id="for-lot" value="for-lot" checked>
+												<label class="main-form__check-label" for="for-lot"> За лот </label>
+											</div>
+											<div class="main-form__custom main-form__custom--radio">
+												<input class="main-form__check" type="radio" name="check-price-type" id="for-unit" value="for-unit">
+												<label class="main-form__check-label" for="for-unit"> За единицу продукции </label>
+											</div>
+										</div>
+										<div class="main-form__custom custom-control custom-checkbox">
+											<input class="custom-control-input" type="checkbox" value="" id="price-not-mounted">
+											<label class="custom-control-label" for="price-not-mounted"> Максимальная цена не установлена </label>
+										</div>
+									</div>
+								</div>
+								<!-- form-price -->
+								<div class="form-price main-form__price row">
+									<label for="price-value" class="main-form__group-header col-xs-12 col-sm-4">Начальная/Максимальная цена с НДС*:</label>
+									<div class="col-xs-12 col-sm-8">
+										<div class="main-form__row">
+											<div class="main-form__group">
+												<input type="number" id="price-value" min="0" class="price-calculate-control" name="price">
+											</div>
+											<div class="main-form__group">
+												<select id="currency">
+													<option>руб.</option>
+													<option>дол.</option>
+													<option>евр.</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-form__row">
+											<div class="form-price__nds main-form__group">
+												<label for="nds-rate">ставка ндс</label>
+												<select id="nds-rate" class="price-calculate-control">
+													<option>Не облагается НДС</option>
+													<option>10%</option>
+													<option>18%</option>
+												</select>
+											</div>
+											<div class="main-form__group">
+												<label for="nds-sum">Сумма ндс</label>
+												<input id="nds-sum" class="price-calculate-control" min="0" type="number" name="nds-sum" disabled>
+											</div>
+											<div class="main-form__group">
+												<label>Цены без ндс</label>
+												<input id="no-nds-price" class="price-calculate-control" min="0" type="number" name="no-nds-price" disabled>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- main-table -->
+								<div class="main-table">
+									<table>
+										<tbody class="main-table__wrap">
+											<tr>
+												<th>№</th>
+												<th>Количество</th>
+												<th>ОКВЕД2/ОКПД2</th>
+												<th>Доп. сведения</th>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>
+													<div class="main-form__group">
+														<input type="number" placeholder="Количество *">
+													</div>
+													<div class="main-form__group">
+														<select>
+															<option>Kine</option>
+															<option>Sirto</option>
+														</select>
+													</div>
+												</td>
+												<td>
+													<div class="main-form__group">
+														<select name="" class="OKV"></select>
+													</div>
+													<div class="main-form__group">
+														<select name="" class="OKP"></select>
+													</div>
+												</td>
+												<td>
+													<div class="main-form__group">
+														<textarea class="scrollbar-light" rows="3">В качестве классификационных признаков видов экономической деятельности в ОКВЭД 2 используются признаки, характеризующие сферу деятельности, процесс производства (технологию). В качестве дополнительного (в пределах одного и того же процесса производства) может выделяться признак «используемое сырье и материалы».</textarea>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>
+													<div class="main-form__group">
+														<input type="number" placeholder="Количество *">
+													</div>
+													<div class="main-form__group">
+														<select>
+															<option>Sirto</option>
+															<option>Kine</option>
+														</select>
+													</div>
+												</td>
+												<td>
+													<div class="main-form__group">
+														<select name="" class="OKV"></select>
+													</div>
+													<div class="main-form__group">
+														<select name="" class="OKP"></select>
+													</div>
+												</td>
+												<td>
+													<div class="main-form__group">
+														<div class="">
+															<textarea class="scrollbar-light" rows="4">Внутри крупных отраслей народного хозяйства, складывающихся на основе общественного разделения труда, выделяются более дробные отрасли, которые представляют собой совокупность предприятий, производящих однородную продукцию, или совокупность учреждений, организаций, связанных с выполнением определенных общественных функций.</textarea>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</main>
+			<!-- END content -->
+			<footer class="footer page__footer">
+			</footer>
+		</div>
+		<!-- BEGIN scripts -->
+		<script type="text/javascript" src="js/bundle.js"></script>
+		<!-- END scripts -->
+	</body>
+</html>

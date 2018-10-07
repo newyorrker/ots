@@ -7,10 +7,10 @@ ots
 git clone https://github.com/newyorrker/ots.git
 
 ### Установить пакеты
-в директории репозитория выполнить npm install && bower install
+в директории репозитория выполнить npm install
 
 ### Запустить gulp
-gulp sass
+gulp
 или
 gulp (default)
 

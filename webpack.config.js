@@ -1,8 +1,12 @@
 const path = require('path');
 
 const webpackConfig = {
+	entry: {
+		main: path.resolve(__dirname, './src/js/main.js'),
+		react: path.resolve(__dirname, './src/js/react.js')
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'public/js')
 	},
 	module: {
@@ -25,10 +29,7 @@ const webpackConfig = {
 				]
 			}
 		]
-	},
-	externals: {
-    jquery: 'jQuery'
-  }
+	}
 };
 
 module.exports = webpackConfig;

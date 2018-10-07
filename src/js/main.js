@@ -5,7 +5,7 @@ import jQueryScrollbar from 'jquery.scrollbar'
 
 jQuery(document).ready(function($) {
 
-(function scrollbarInit () {
+(function scrollbarInit () { //кастомный скролл для textarea
 	if (jQueryScrollbar && $('.scrollbar-light').length > 0) {
 		$('.scrollbar-light').scrollbar();
 	}
@@ -47,6 +47,7 @@ class PriceTypeChange {
 		checkbox.on('change', (e) => {
 			this.priceToggle();
 		});
+
 	}
 	priceCalculate() {
 
@@ -84,15 +85,15 @@ class PriceTypeChange {
 
 		}
 
-		calcPrices(priceValue, ndsToNumber(ndsRate))
+		calcPrices(priceValue, ndsToNumber(ndsRate)) //вызов  функции расчета
 
 	}
 
-	maxPriceToggle() {
+	maxPriceToggle() { //метод для скрытия чекбокса "максимальная цена"
 		$('#price-not-mounted').parent().slideToggle();
 	}
 
-	priceToggle() {
+	priceToggle() { //метод для скрытия блока с ценами
 		const priceType = $('#price-not-mounted').closest('.price-type').next();
 		priceType.slideToggle();
 	}
@@ -122,7 +123,6 @@ class Codes {
 			.then(function (data) {
 				$(element.selector).select2({
 					data: data,
-					placeholder: "Выберетие код"
 					placeholder: "Выберете код",
 				})
 			})
@@ -131,13 +131,12 @@ class Codes {
 				$(element.selector).select2({
 					placeholder: "Ошибка загрузки списка кодов",
 				})
-    			// allowClear: true
-				}) // сделать обработку ошибки
 			});
   	});
   }
 }
 
+const formEvents = new PriceTypeChange();
 const selectCode = new Codes();
 
 });

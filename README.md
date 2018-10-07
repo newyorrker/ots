@@ -14,8 +14,6 @@ gulp sass
 или
 gulp (default)
 
-
----
 ## Ссылки
 
 [Реализация  jQuery: ](https://github.com/newyorrker/ots/tree/master "Реализация  jQuery")

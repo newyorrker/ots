@@ -24,22 +24,22 @@
 							<span class="main-form__group-header col-xs-12 col-sm-4">Тип ценового предложения:</span>
 							<div class="col-xs-12 col-sm-8">
 								<div class="price-type__inline main-form__row">
-									<div class="main-form__group">
+									<div class="main-form__custom main-form__custom--radio">
 										<input class="main-form__check" type="radio" name="check-price-type" id="for-lot" value="for-lot" checked>
 										<label class="main-form__check-label" for="for-lot">
 											За лот
 										</label>
 									</div>
-									<div class="main-form__group">
+									<div class="main-form__custom main-form__custom--radio">
 										<input class="main-form__check" type="radio" name="check-price-type" id="for-unit" value="for-unit">
 										<label class="main-form__check-label" for="for-unit">
 											За единицу продукции
 										</label>
 									</div>
 								</div>
-								<div class="main-form__group">
-									<input type="checkbox" value="" id="price-not-mounted">
-									<label class="form-check-label" for="price-not-mounted">
+								<div class="main-form__custom custom-control custom-checkbox">
+									<input class="custom-control-input" type="checkbox" value="" id="price-not-mounted">
+									<label class="custom-control-label" for="price-not-mounted">
 										Максимальная цена не установлена
 									</label>
 								</div>
@@ -51,7 +51,7 @@
 							<div class="col-xs-12 col-sm-8">
 								<div class="main-form__row">
 									<div class="main-form__group">
-										<input type="text" id="price-value" name="price">
+										<input type="number" id="price-value" min="0" class="price-calculate-control" name="price">
 									</div>
 									<div class="main-form__group">
 										<select id="currency">
@@ -64,98 +64,94 @@
 								<div class="main-form__row">
 									<div class="form-price__nds main-form__group">
 										<label for="nds-rate">ставка ндс</label>
-										<select id="nds-rate">
+										<select id="nds-rate" class="price-calculate-control">
+											<option>Не облагается НДС</option>
+											<option>10%</option>
 											<option>18%</option>
-											<option>19%</option>
-											<option>20%</option>
 										</select>
 									</div>
 									<div class="main-form__group">
 										<label for="nds-sum">Сумма ндс</label>
-										<input id="nds-sum" type="text" name="nds-sum">
+										<input id="nds-sum" class="price-calculate-control" min="0" type="number" name="nds-sum" disabled>
 									</div>
 									<div class="main-form__group">
 										<label>Цены без ндс</label>
-										<input id="no-nds-price" type="text" name="no-nds-price">
+										<input id="no-nds-price" class="price-calculate-control" min="0" type="number" name="no-nds-price" disabled>
 									</div>
 								</div>
 							</div>
 						</div>
-					</form>
-					<div class="main-table">
-						<table>
-							<tbody class="main-table__wrap">
-								<tr>
-									<th>№</th>
-									<th>Количество</th>
-									<th>ОКВЕД2/ОКПД2</th>
-									<th>Доп. сведения</th>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>
-										<div class="main-form__group">
-											<input type="number" placeholder="Количество *">
-										</div>
-										<div class="main-form__group">
-											<select>
-												<option>Kine</option>
-												<option>Sirto</option>
-											</select>
-										</div>
-									</td>
-									<td>
-										<div class="main-form__group">
-											<select name="" class="OKV"></select>
-										</div>
-										<div class="main-form__group">
-											<select name="" class="OKP"></select>
-										</div>
-									</td>
-									<td>
-										<div class="main-form__group">
-											<textarea class="scrollbar-light" rows="3">После промисификации использование функционала зачастую становится гораздо удобнее.
-
-												В качестве примера сделаем такую обёртку для запросов при помощи XMLHttpRequest.
-
-												Функция httpGet(url) будет возвращать промис, который при успешной загрузке данных с url будет переходить в fulfilled с этими данными, а при ошибке – в rejected с информацией об ошибке:</textarea>
-
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>
-										<div class="main-form__group">
-											<input type="number" placeholder="Количество *">
-										</div>
-										<div class="main-form__group">
-											<select>
-												<option>Kine</option>
-												<option>Sirto</option>
-											</select>
-										</div>
-									</td>
-									<td>
-										<div class="main-form__group">
-											<select name="" class="OKV"></select>
-										</div>
-										<div class="main-form__group">
-											<select name="" class="OKP"></select>
-										</div>
-									</td>
-									<td>
-										<div class="main-form__group">
-											<div class="">
-												<textarea class="scrollbar-light" rows="4">функционала зачастую становится гораздо удобнее.	В качестве примера сделаем такую обёртку для запросов при помощи XMLHttpRequest. Функция httpGet(url) будет возвращать промис, который при успешной загрузке данных с url будет переходить в fulfilled с этими данными, а при ошибке – в rejected с информацией об ошибке:</textarea>
+						<!-- main-table -->
+						<div class="main-table">
+							<table>
+								<tbody class="main-table__wrap">
+									<tr>
+										<th>№</th>
+										<th>Количество</th>
+										<th>ОКВЕД2/ОКПД2</th>
+										<th>Доп. сведения</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>
+											<div class="main-form__group">
+												<input type="number" placeholder="Количество *">
 											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
+											<div class="main-form__group">
+												<select>
+													<option>Kine</option>
+													<option>Sirto</option>
+												</select>
+											</div>
+										</td>
+										<td>
+											<div class="main-form__group">
+												<select name="" class="OKV"></select>
+											</div>
+											<div class="main-form__group">
+												<select name="" class="OKP"></select>
+											</div>
+										</td>
+										<td>
+											<div class="main-form__group">
+												<textarea class="scrollbar-light" rows="3">В качестве классификационных признаков видов экономической деятельности в ОКВЭД 2 используются признаки, характеризующие сферу деятельности, процесс производства (технологию). В качестве дополнительного (в пределах одного и того же процесса производства) может выделяться признак «используемое сырье и материалы».</textarea>
 
-						</table>
-					</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>
+											<div class="main-form__group">
+												<input type="number" placeholder="Количество *">
+											</div>
+											<div class="main-form__group">
+												<select>
+													<option>Sirto</option>
+													<option>Kine</option>
+												</select>
+											</div>
+										</td>
+										<td>
+											<div class="main-form__group">
+												<select name="" class="OKV"></select>
+											</div>
+											<div class="main-form__group">
+												<select name="" class="OKP"></select>
+											</div>
+										</td>
+										<td>
+											<div class="main-form__group">
+												<div class="">
+													<textarea class="scrollbar-light" rows="4">Внутри крупных отраслей народного хозяйства, складывающихся на основе общественного разделения труда, выделяются более дробные отрасли, которые представляют собой совокупность предприятий, производящих однородную продукцию, или совокупность учреждений, организаций, связанных с выполнением определенных общественных функций.</textarea>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
 
 				</div>
 			</div>

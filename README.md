@@ -14,9 +14,6 @@ gulp sass
 или
 gulp (default)
 
-
----
-
 ## Ссылки
 
 [Реализация  React.js: ](https://github.com/newyorrker/ots/tree/react-implement "Реализация  React.js")

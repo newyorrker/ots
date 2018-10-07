@@ -16,7 +16,7 @@ gulp (default)
 
 
 ---
-##Ссылки
+## Ссылки
 
 [Реализация  jQuery: ](https://github.com/newyorrker/ots/tree/master "Реализация  jQuery")
 

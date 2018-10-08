@@ -12,7 +12,7 @@ const $ = gulpLoadPlugins();
 let mq = mqpacker({sort: sortMediaQueries})
 let processors = [
 	autoprefixer({
-			browsers: ['last 4 versions'],
+			browsers: ['last 7 versions'],
 			cascade: false
 	}),
 	mq,
